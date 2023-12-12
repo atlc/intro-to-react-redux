@@ -1,26 +1,45 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Card from "./components/Card";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [title, setTitle] = useState("This prop drilling SUCKS");
+    const [text, setText] = useState("Seriously, it's so bad");
+    const [footer, setFooter] = useState("I can't wait until these values are just defined in global state with Redux");
+
+    return (
+        <div className="container">
+            <div className="row justify-content-center">
+                <div className="col-12 col-md-6 bg-success-subtle p-3 rounded-3">
+                    <label htmlFor="">Title:</label>
+                    <input
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        type="text"
+                        className="form-control"
+                    />
+                    <label htmlFor="">Text:</label>
+                    <input
+                        value={text}
+                        onChange={(e) => setText(e.target.value)}
+                        type="text"
+                        className="form-control"
+                    />
+                    <label htmlFor="">Footer:</label>
+                    <input
+                        value={footer}
+                        onChange={(e) => setFooter(e.target.value)}
+                        type="text"
+                        className="form-control"
+                    />
+                </div>
+            </div>
+            <div className="row justify-content-center">
+                <div className="col-12 col-md-6">
+                    <Card title={title} text={text} footer={footer} />
+                </div>
+            </div>
+        </div>
+    );
 }
 
 export default App;
