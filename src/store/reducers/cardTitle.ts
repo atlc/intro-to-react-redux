@@ -1,20 +1,20 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "..";
+import { createSlice } from '@reduxjs/toolkit';
 
 const title = createSlice({
-    name: "title",
-    initialState: {
-        value: "This prop drilling SUCKS",
-    },
-    reducers: {
-        updateTitle: (state, action) => {
-            state.value = action.payload;
-        },
-    },
+	name: 'title',
+	initialState: {
+		value: 'This prop drilling SUCKS'
+	},
+	reducers: {
+		updateTitle: (state, action) => {
+			state.value = action.payload;
+		}
+	},
+	selectors: {
+		getTitle: state => state.value
+	}
 });
 
 export const { updateTitle } = title.actions;
-
-export const titleSelector = (state: RootState) => state.cardTitleReducer.value;
-
+export const { getTitle } = title.selectors;
 export default title.reducer;

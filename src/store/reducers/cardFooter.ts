@@ -15,6 +15,6 @@ const footer = createSlice({
 
 export const { updateFooter } = footer.actions;
 
-export const footerSelector = (state: RootState) => state.cardFooterReducer.value;
+export const footerSelector = (state: RootState) => state.footer.value;
 
 export default footer.reducer;

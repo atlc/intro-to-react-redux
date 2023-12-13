@@ -15,6 +15,6 @@ const text = createSlice({
 
 export const { updateText } = text.actions;
 
-export const textSelector = (state: RootState) => state.cardTextReducer.value;
+export const textSelector = (state: RootState) => state.text.value;
 
 export default text.reducer;
