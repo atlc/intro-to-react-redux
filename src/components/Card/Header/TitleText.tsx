@@ -1,10 +1,9 @@
 import React from "react";
+import { textSelector } from "../../../store/reducers/cardText";
+import { useSelector } from "react-redux";
 
-interface TitleTextProps {
-    title: string;
-}
-
-const TitleText = ({ title }: TitleTextProps) => {
+const TitleText = () => {
+    const title = useSelector(textSelector);
     return <h1 className="text-center">{title}</h1>;
 };
 

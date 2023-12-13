@@ -1,10 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { textSelector } from "../../../store/reducers/cardText";
 
-interface BodyTextProps {
-    text: string;
-}
-
-const BodyText = ({ text }: BodyTextProps) => {
+const BodyText = () => {
+    const text = useSelector(textSelector);
     return <p>{text}</p>;
 };
 

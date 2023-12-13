@@ -1,10 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { footerSelector } from "../../../store/reducers/cardFooter";
 
-interface FooterProps {
-    footer: string;
-}
-
-const Footer = ({ footer }: FooterProps) => {
+const Footer = () => {
+    const footer = useSelector(footerSelector);
     return (
         <div className="card-footer bg-success-subtle">
             <p>{footer}</p>
