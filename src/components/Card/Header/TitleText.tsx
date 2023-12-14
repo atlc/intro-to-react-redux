@@ -1,9 +1,9 @@
 import React from "react";
-import { textSelector } from "../../../store/reducers/cardText";
+import { getTitle } from "../../../store/reducers/cardTitle";
 import { useSelector } from "react-redux";
 
 const TitleText = () => {
-    const title = useSelector(textSelector);
+    const title = useSelector(getTitle);
     return <h1 className="text-center">{title}</h1>;
 };
 

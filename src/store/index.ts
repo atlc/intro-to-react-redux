@@ -5,9 +5,9 @@ import cardFooterReducer from "./reducers/cardFooter";
 
 export const store = configureStore({
     reducer: {
-        cardTitleReducer,
-        cardTextReducer,
-        cardFooterReducer,
+        title: cardTitleReducer,
+        text: cardTextReducer,
+        footer: cardFooterReducer,
     },
 });
 
